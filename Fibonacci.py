@@ -5,12 +5,13 @@ def run():
 		print fib(x)
 
 def fib(n):
-	if(n==0):
-		return 0;
-	elif(n==1 or n == 2):
-		return 1;
-	else:
+	if(n>=3):
 		return fib(n-2) + fib(n-1)
+	else:
+		if(n==0):
+			return 0;
+		else:
+			return 1;
 
 
 for i in range(int(sys.stdin.readline())):
