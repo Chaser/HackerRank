@@ -1,26 +1,35 @@
 #include <iostream>
+
 using namespace std;
-int fib(int);
-int main() {
+int main() 
+{
   int cases;
   int x = 0;
   cin >> cases;
-  cin >> x;
-  while (cases--) {
-  	for (int i=0;i<=x-1;i++) {
-  		cout << fib(i) << '\n';
-  	}
-  }
-}
-
-int fib(int n) {
-	if(n==0)
-		return 0;
-	if(n==1 || n==2)
-		return 1;
-	else
+  long fib[100];
+  while (cases--) 
+  {
+  	cin >> x;
+	if(x<=2) 
 	{
-		return (fib(n-2) + fib(n-1));
+		fib[0]=0;
+		cout << fib[0] << '\n';
+		fib[1]=1;
+		cout << fib[1] << '\n';
 	}
-
+	else 
+	{
+		fib[0]=0;
+		cout << fib[0] << '\n';
+		fib[1]=1;
+		cout << fib[1] << '\n';
+		for(int i=2; i<x; i++)
+		{
+			fib[i] = fib[i-1] + fib[i-2]; 	
+			cout << fib[i] << '\n';
+		} 		 
+	}		
+  }
+  return 0;
 }
+
